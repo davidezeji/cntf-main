@@ -127,3 +127,7 @@ variable "bucket_name_one" {
 variable "bucket_name_two" {
   default = "cntf-open5gs-coralogix-metrics"
 }
+
+# variable "aws_ecr_repository_name" {
+#   default = "cntf-ueransim-puppeteer"
+# }
