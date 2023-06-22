@@ -1,0 +1,4 @@
+global:
+  domain: "<cx_domain>"
+opentelemetry-collector:
+  mode: "<daemonset/deployment>"
