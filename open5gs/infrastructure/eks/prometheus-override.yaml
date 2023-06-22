@@ -1,0 +1,2 @@
+global:
+  endpoint: "https://ingress.<Coralogix Domain>/prometheus/v1"

@@ -230,8 +230,8 @@ resource "kubernetes_namespace" "monitoring" {
 }
 # Install the OpenTelemetry for Coralogix
 resource "helm_release" "otel_coralogix" {
-  repository = "https://cgx.jfrog.io/artifactory/coralogix-charts-virtual"
-  chart      = "otel-coralogix-agent"
+  repository = "https://open-telemetry.github.io/opentelemetry-helm-charts"
+  chart      = "open-telemetry/opentelemetry-collector"
   
   
   name       = "otel-coralogix"
@@ -240,6 +240,26 @@ resource "helm_release" "otel_coralogix" {
  
   values = [
     file("${path.module}/otel-override.yaml")
+  ]
+
+  depends_on = [
+    kubernetes_secret.coralogix-keys
+  ]
+
+}
+
+# Install the prometheus operator for Coralogix
+resource "helm_release" "prometheus_coralogix" {
+  repository = "https://cgx.jfrog.io/artifactory/coralogix-charts-virtual"
+  chart      = "prometheus-operator-coralogix"
+  
+  
+  name       = "prometheus-coralogix"
+  namespace = "monitoring"
+  cleanup_on_fail = true
+ 
+  values = [
+    file("${path.module}/prometheus-override.yaml")
   ]
 
   depends_on = [
