@@ -1,2 +1,2 @@
 global:
-  endpoint: "https://ingress.<Coralogix Domain>/prometheus/v1"
+  endpoint: "https://ingress.dish-cntf.app.coralogix.us/prometheus/v1"
