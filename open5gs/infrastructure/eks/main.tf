@@ -230,7 +230,7 @@ resource "kubernetes_namespace" "monitoring" {
 }
 # Install the OpenTelemetry for Coralogix
 resource "helm_release" "otel_coralogix" {
-  repository = "https://open-telemetry.github.io/opentelemetry-helm-charts"
+  repository = "https://cgx.jfrog.io/artifactory/coralogix-charts-virtual"
   chart      = "opentelemetry-collector"
   
   
