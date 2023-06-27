@@ -38,6 +38,6 @@ config:
       metrics:
         receivers: [prometheus]
         processors: [batch, memory_limiter]
-        exporters: [prometheus]
+        exporters: [coralogix]
     extensions:
       - health_check
