@@ -1,4 +1,7 @@
-mode: daemonset
+global:
+  domain: "coralogix.us"
+opentelemetry-collector:
+  mode: "depolyment"
 
 config:
   exporters:
