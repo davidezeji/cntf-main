@@ -246,6 +246,11 @@ resource "helm_release" "otel_coralogix" {
     kubernetes_secret.coralogix-keys
   ]
 
+  set {
+    name = "config.exporters.coralogix.private_key"
+    value = var.coralogix_write_key
+  }
+
 }
 
 # Install the prometheus operator for Coralogix
