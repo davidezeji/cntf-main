@@ -259,7 +259,7 @@ resource "helm_release" "prometheus_coralogix" {
   cleanup_on_fail = true
  
   values = [
-    file("${path.module}/prometheus-override.yaml")
+    file("prometheus-override.yaml")
   ]
 
   depends_on = [
