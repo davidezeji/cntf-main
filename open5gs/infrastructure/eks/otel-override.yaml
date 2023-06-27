@@ -3,13 +3,8 @@ mode: daemonset
 config:
   exporters:
     coralogix:
+      domain: "coralogix.us"
       # The Coralogix traces ingress endpoint
-      traces:
-        endpoint: "ingress.coralogix.us:443"
-      metrics:
-        endpoint: "ingress.coralogix.us:443"
-      logs:
-        endpoint: "ingress.coralogix.us:443"
       # Your Coralogix private key is sensitive
       private_key: "${CORALOGIX_WRITE_KEY}"
       application_name: "open5gs"
