@@ -266,9 +266,10 @@ resource "helm_release" "prometheus_coralogix" {
     kubernetes_secret.coralogix-keys
   ]
 
-#  set {
- #   global.endpoint = "https://ingress.coralogix.us/prometheus/v1"
- # }
+  set {
+    name = "global.endpoint"
+    value = "https://ingress.coralogix.us/prometheus/v1"
+  }
 
 }
 
