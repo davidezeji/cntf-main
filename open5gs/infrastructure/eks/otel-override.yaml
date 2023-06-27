@@ -1,7 +1,7 @@
 global:
   domain: "coralogix.us"
 opentelemetry-collector:
-  mode: "depolyment"
+  mode: "deployment"
 
 config:
   exporters:
