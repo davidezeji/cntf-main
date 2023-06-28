@@ -1,2 +1,0 @@
-global:
-  endpoint: "https://ingress.coralogix.us/prometheus/v1"

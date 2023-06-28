@@ -253,31 +253,6 @@ resource "helm_release" "otel_coralogix" {
 
 }
 
-# Install the prometheus operator for Coralogix
-resource "helm_release" "prometheus_coralogix" {
-  repository = "https://cgx.jfrog.io/artifactory/coralogix-charts-virtual"
-  chart      = "prometheus-operator-coralogix"
-  
-  
-  name       = "prometheus-coralogix"
-  namespace = "monitoring"
-  cleanup_on_fail = true
- 
-  values = [
-    file("prometheus-override.yaml")
-  ]
-
-  depends_on = [
-    kubernetes_secret.coralogix-keys
-  ]
-
-  set {
-    name = "global.endpoint"
-    value = "https://ingress.coralogix.us/prometheus/v1"
-  }
-
-}
-
 resource "kubernetes_namespace" "open5gs" {
   metadata {
     name = "open5gs"
