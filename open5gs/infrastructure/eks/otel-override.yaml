@@ -1,7 +1,7 @@
 global:
   domain: "coralogix.us"
 opentelemetry-collector:
-  mode: "deployment"
+  mode: "daemonset"
 
 config:
   exporters:
@@ -32,7 +32,7 @@ config:
           - job_name: 'otel-collector'
             scrape_interval: 5s
             static_configs:
-              - targets: ['0.0.0.0:8888', '0.0.0.0:9090']
+              - targets: ['0.0.0.0:8888']
           - job_name: 'kubernetes-service-endpoints'
             kubernetes_sd_configs:
             - role: endpoints
