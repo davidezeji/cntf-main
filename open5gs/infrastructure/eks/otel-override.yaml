@@ -33,6 +33,10 @@ config:
             scrape_interval: 5s
             static_configs:
               - targets: ['0.0.0.0:8888']
+          - job_name: 'kubernetes-pods'
+            sample_limit: 10000
+            kubernetes_sd_configs:
+            - role: pod
           - job_name: 'kubernetes-service-endpoints'
             kubernetes_sd_configs:
             - role: endpoints
