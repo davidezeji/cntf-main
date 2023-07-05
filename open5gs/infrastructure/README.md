@@ -2,7 +2,7 @@
 
 To accurately test Open5GS's functionalities, a cloud infrastructure environment is needed to host its application components (5g network functions). Open5GS's infrastructure was created with the help of tools such as *AWS*, *Terraform*, and *GitLab CI*.
 
-## Infrastructure components
+## Components
 * Kubernetes version: `> = 1.24`
 * EKS Cluster: `minimum of 5 nodes with an instance type of "t2.medium" is desired.`
   
