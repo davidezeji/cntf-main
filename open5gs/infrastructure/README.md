@@ -18,13 +18,12 @@ This module contains the terraform configurations to create the cluster for Open
          |- outputs.tf: this file exports structured data about your resources. This data can be used to configure other parts of the infrastructure with automation tools.
          |- provider.tf: this file enables Terraform to work with multiple APIs such as those for AWS, Kubernetes, kubectl and helm.
          |- variables.tf: this file is where all module variables are declared.
-         |- versions.tf: this file configures the versions of multiple terraform providers. Additionaaly, it defines the storage backend for the terraform state file (ex: AWS S3).
+         |- versions.tf: this file configures the versions of multiple terraform providers. Additionaly, it defines the storage backend for the terraform state file (ex: AWS S3).
 
 ```
 ## CI/CD
 
 Gitlab CI is the automation tool of choice for deploying Open5GS's infrastructure. The pipeline stages concerning infrastructure creation effectively test, build, deploy and destroy the resources defined by the terraform configurations in the EKS module.
-
 ```
 stages:
   - validate
@@ -32,5 +31,4 @@ stages:
   - build
   - deploy
   - cleanup 
-
 ```
