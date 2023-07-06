@@ -1,6 +1,6 @@
 # Architecture
 
-![Screenshot 2023-05-04 at 10 42 29 AM (3)](https://github.com/DISHDevEx/cntf/assets/82470009/97efdcdf-e6f1-47ef-943e-01d20053a237)
+<img width="1458" alt="Screenshot 2023-07-06 at 9 54 59 AM" src="https://github.com/DISHDevEx/cntf/assets/82470009/8dc32707-7bac-4ee3-81c6-75f58c06bc17">
 
 # Open5GS
 
@@ -15,6 +15,10 @@ Please refer to this documentation to learn more about UERANSIM: https://github.
 # Coralogix
 
 Please refer to this documentation to learn more about Coralogix: https://coralogix.com/
+
+# Palantir
+
+Please refer to this documentation to learn more about Coralogix: https://www.palantir.com/
 
 # OpenTelemtry
 
