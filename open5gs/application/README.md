@@ -18,7 +18,7 @@ Please refer to this documentation to learn more about Coralogix: https://coralo
 
 ## Palantir
 
-Please refer to this documentation to learn more about Coralogix: https://www.palantir.com/
+Please refer to this documentation to learn more about Palantir: https://www.palantir.com/
 
 ## OpenTelemtry
 
