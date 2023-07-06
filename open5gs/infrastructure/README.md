@@ -18,7 +18,7 @@ This module contains the terraform configurations to create the cluster for Open
          |- outputs.tf: this file exports structured data about your resources. This data can be used to configure other parts of the infrastructure with automation tools.
          |- provider.tf: this file enables Terraform to work with multiple APIs such as those for AWS, Kubernetes, kubectl and helm.
          |- variables.tf: this file is where all module variables are declared.
-         |- versions.tf: this file configures the versions of multiple terraform providers. Additionaly, it defines the storage backend for the terraform state file (ex: AWS S3).
+         |- versions.tf: this file configures the versions of multiple terraform providers. Additionally, it defines the storage backend for the terraform state file (ex: AWS S3).
 
 ```
 ## CI/CD
