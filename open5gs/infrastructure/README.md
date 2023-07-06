@@ -23,7 +23,7 @@ This module contains the terraform configurations to create the cluster for Open
 ```
 ## CI/CD
 
-Gitlab CI is the automation tool of choice for deploying Open5GS's infrastructure. The pipeline stages concerning infrastructure creation effectively test, build, deploy and destroy the resources defined by the terraform configurations in the EKS module.
+Gitlab CI is the automation tool of choice for deploying Open5GS's infrastructure. The pipeline stages concerning infrastructure effectively test, build, deploy and destroy the resources defined by the terraform configurations in the EKS module.
 ```
 stages:
   - validate
