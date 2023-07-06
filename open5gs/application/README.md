@@ -10,7 +10,7 @@ Please refer to this documentation to learn more about Open5GS: https://github.c
 
 Please refer to this documentation to learn more about UERANSIM: https://github.com/DISHDevEx/UERANSIM
 
-*UERANSIM is currently the test tool of choice for CNTF, this may be subject to change in the future.*
+**UERANSIM is currently the test tool of choice for CNTF, this may be subject to change in the future.*
 
 # Coralogix
 
