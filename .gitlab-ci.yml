@@ -208,4 +208,3 @@ smoke_test:
     - kubectl -n openverso exec $UE_POD -- /tmp/ueransim_smoke_test.sh
  
     
-    
