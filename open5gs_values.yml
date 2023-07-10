@@ -19,6 +19,14 @@ sgwu:
   enabled: false
 
 amf:
+  metrics: 
+    enabled: true
+  services: 
+    metrics:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/metrics"
   config:
     guamiList:
       - plmn_id:

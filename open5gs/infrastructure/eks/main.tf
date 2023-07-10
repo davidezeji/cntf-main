@@ -228,6 +228,30 @@ resource "kubernetes_namespace" "monitoring" {
     name = "monitoring"
   }
 }
+# Install the OpenTelemetry for Coralogix
+resource "helm_release" "otel_coralogix" {
+  repository = "https://cgx.jfrog.io/artifactory/coralogix-charts-virtual"
+  chart      = "opentelemetry-coralogix"
+  
+  
+  name       = "otel-coralogix"
+  namespace = "monitoring"
+  cleanup_on_fail = true
+ 
+  values = [
+    file("${path.module}/otel-override.yaml")
+  ]
+
+  depends_on = [
+    kubernetes_secret.coralogix-keys
+  ]
+
+  set {
+    name = "config.exporters.coralogix.private_key"
+    value = var.coralogix_write_key
+  }
+
+}
 
 resource "kubernetes_namespace" "open5gs" {
   metadata {

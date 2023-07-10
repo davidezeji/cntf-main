@@ -1,0 +1,101 @@
+global:
+  domain: "coralogix.us"
+opentelemetry-collector:
+  mode: "daemonset"
+
+config:
+  exporters:
+    coralogix:
+      domain: "coralogix.us"
+      # The Coralogix traces ingress endpoint
+      # Your Coralogix private key is sensitive
+      private_key: "${CORALOGIX_WRITE_KEY}"
+      application_name: "open5gs"
+      subsystem_name: "open5gs"
+
+    # (Optional) Timeout is the timeout for every attempt to send data to the backend.
+    timeout: 30s
+
+  extensions:
+    health_check: {}
+  processors:
+    batch: {}
+    # If set to null, will be overridden with values based on k8s resource limits
+    memory_limiter:
+      limit_percentage: 50
+      check_interval: 1s
+      spike_limit_percentage: 30
+  receivers:
+    prometheus:
+      config:
+        scrape_configs:
+          - job_name: 'otel-collector'
+            scrape_interval: 5s
+            static_configs:
+              - targets: ['0.0.0.0:8888']
+          - job_name: 'kubernetes-pods'
+            sample_limit: 10000
+            kubernetes_sd_configs:
+            - role: pod
+          - job_name: 'kubernetes-service-endpoints'
+            kubernetes_sd_configs:
+            - role: endpoints
+
+            relabel_configs:
+            # Example relabel to scrape only endpoints that have
+            # "prometheus.io/scrape = true" annotation.
+            # - action: keep
+            #   regex: true
+            #   source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
+            # Example relabel to configure scrape scheme for all service scrape targets
+            # based on endpoints "prometheus.io/scrape_scheme = <scheme>" annotation.
+            # - action: replace
+            #   regex: (https?)
+            #   source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scheme]
+            #   target_label: __scheme__
+            # Example relabel to customize metric path based on endpoints
+            # "prometheus.io/path = <metric path>" annotation.
+            # - action: replace
+            #   regex: (.+)
+            #   source_labels: [__meta_kubernetes_service_annotation_prometheus_io_path]
+            #   target_label: __metrics_path__
+            # Example relabel to scrape only single, desired port for the service based
+            # on endpoints "prometheus.io/scrape_port = <port>" annotation.
+            # - action: replace
+            #   regex: ([^:]+)(?::\d+)?;(\d+)
+            #   replacement: $$1:$$2
+            #   source_labels: [__address__,__meta_kubernetes_service_annotation_prometheus_io_port]
+            #   target_label: __address__
+            - action: labelmap
+              regex: __meta_kubernetes_pod_label_(.+)      
+            - action: replace
+              source_labels: [__meta_kubernetes_namespace]
+              target_label: Namespace
+            - action: replace
+              source_labels: [__meta_kubernetes_service_name]
+              target_label: Service
+            - action: replace
+              source_labels: [__meta_kubernetes_pod_node_name]
+              target_label: kubernetes_node
+            - action: replace
+              source_labels: [__meta_kubernetes_pod_name]
+              target_label: pod_name
+            - action: replace
+              source_labels: [__meta_kubernetes_pod_container_name]
+              target_label: container_name
+
+            # Exclude high cardinality metrics
+            metric_relabel_configs:
+            - source_labels: [__name__]
+              regex: 'go_gc_duration_seconds.*'
+              action: drop
+          
+
+  service:
+    pipelines:
+      metrics:
+        receivers: [prometheus]
+        processors: [batch, memory_limiter]
+        exporters: [coralogix]
+    extensions:
+      - health_check
