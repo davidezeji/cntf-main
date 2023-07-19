@@ -23,6 +23,7 @@ stages:
 fmt:
   extends: .terraform:fmt
   before_script:
+    - apk update
     - apk add --no-cache python3 py3-pip 
     - pip3 install --upgrade pip 
     - pip3 install --no-cache-dir awscli
@@ -36,6 +37,7 @@ fmt:
 validate:
   extends: .terraform:validate
   before_script:
+    - apk update
     - apk add --no-cache python3 py3-pip 
     - pip3 install --upgrade pip 
     - pip3 install --no-cache-dir awscli
@@ -53,6 +55,7 @@ build:
     name: $TF_STATE_NAME
     action: prepare
   before_script:
+    - apk update
     - apk add --no-cache python3 py3-pip 
     - pip3 install --upgrade pip 
     - pip3 install --no-cache-dir awscli
@@ -71,6 +74,7 @@ deploy: # pipeline currently doesn't scale according to current terraform config
     name: $TF_STATE_NAME
     action: start
   before_script:
+    - apk update
     - apk add --no-cache python3 py3-pip 
     - pip3 install --upgrade pip 
     - pip3 install --no-cache-dir awscli
@@ -89,6 +93,7 @@ cleanup:
     name: $TF_STATE_NAME
     action: stop
   before_script:
+    - apk update
     - apk add --no-cache python3 py3-pip 
     - pip3 install --upgrade pip 
     - pip3 install --no-cache-dir awscli
