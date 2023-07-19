@@ -29,10 +29,10 @@ fmt:
     - pip3 install --no-cache-dir awscli
     - aws --version
   needs: []
-  rules:
-    - changes:
-        paths:
-          - open5gs/infrastructure/eks/*.tf
+  # rules:
+  #   - changes:
+  #       paths:
+  #         # - open5gs/infrastructure/eks/*.tf
 
 validate:
   extends: .terraform:validate
@@ -43,10 +43,10 @@ validate:
     - pip3 install --no-cache-dir awscli
     - aws --version
   needs: []
-  rules:
-    - changes:
-        paths:
-          - open5gs/infrastructure/eks/*.tf
+  # rules:
+  #   - changes:
+  #       paths:
+  #         - open5gs/infrastructure/eks/*.tf
 
 build:
   extends: .terraform:build
@@ -60,12 +60,12 @@ build:
     - pip3 install --upgrade pip 
     - pip3 install --no-cache-dir awscli
     - aws --version
-  rules:
-    - changes:
-        paths:
-          - open5gs/infrastructure/eks/*.tf
+  # rules:
+  #   - changes:
+  #       paths:
+  #         - open5gs/infrastructure/eks/*.tf
  
-deploy: # pipeline currently doesn't scale according to current terraform configurations
+deploy: 
   extends: .terraform:deploy
   resource_group: $TF_STATE_NAME
   dependencies:
@@ -79,10 +79,10 @@ deploy: # pipeline currently doesn't scale according to current terraform config
     - pip3 install --upgrade pip 
     - pip3 install --no-cache-dir awscli
     - aws --version
-  rules:
-    - changes:
-        paths:
-          - open5gs/infrastructure/eks/*.tf
+  # rules:
+  #   - changes:
+  #       paths:
+  #         - open5gs/infrastructure/eks/*.tf
 
 cleanup:
   extends: .terraform:destroy
