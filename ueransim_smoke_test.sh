@@ -1,4 +1,4 @@
-#!/bin/bash
+#!usr/bin/env bash
 
 echo ip addr
 ping -I uesimtun0 -c 1 google.com 
