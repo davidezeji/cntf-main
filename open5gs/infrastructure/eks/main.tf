@@ -265,28 +265,28 @@ resource "kubernetes_namespace" "ueransim" {
   }
 }
 
-resource "aws_s3_bucket" "cntf_open5gs_bucket_logs" {
-  bucket = var.bucket_name_one
-}
+# resource "aws_s3_bucket" "cntf_open5gs_bucket_logs" {
+#   bucket = var.bucket_name_one
+# }
 
-resource "aws_s3_bucket" "cntf_open5gs_bucket_metrics" {
-  bucket = var.bucket_name_two
-}
+# resource "aws_s3_bucket" "cntf_open5gs_bucket_metrics" {
+#   bucket = var.bucket_name_two
+# }
 
-resource "aws_s3_bucket" "cntf-open5gs-coralogix-test-results" {
-  bucket = var.bucket_name_three
-}
+# resource "aws_s3_bucket" "cntf-open5gs-coralogix-test-results" {
+#   bucket = var.bucket_name_three
+# }
 
 # resource "aws_s3_bucket" "cntf_open5gs_bucket_tfstate" {
 #   bucket = var.bucket_name_four
 # }
 
 # ECR repository for custom ueransim image
-resource "aws_ecr_repository" "cntf-ueransim-puppeteer-ecr-repository" {
-  name                 = "var.aws_ecr_repository_name"
-  image_tag_mutability = "MUTABLE"
+# resource "aws_ecr_repository" "cntf-ueransim-puppeteer-ecr-repository" {
+#   name                 = "var.aws_ecr_repository_name"
+#   image_tag_mutability = "MUTABLE"
 
-  image_scanning_configuration {
-    scan_on_push = true
-  }
-}
+#   image_scanning_configuration {
+#     scan_on_push = true
+#   }
+# }
