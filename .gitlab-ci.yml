@@ -29,10 +29,10 @@ fmt:
     - pip3 install --no-cache-dir awscli
     - aws --version
   needs: []
-  # rules:
-  #   - changes:
-  #       paths:
-  #         # - open5gs/infrastructure/eks/*.tf
+  rules:
+    - changes:
+        paths:
+          # - open5gs/infrastructure/eks/*.tf
 
 validate:
   extends: .terraform:validate
@@ -43,10 +43,10 @@ validate:
     - pip3 install --no-cache-dir awscli
     - aws --version
   needs: []
-  # rules:
-  #   - changes:
-  #       paths:
-  #         - open5gs/infrastructure/eks/*.tf
+  rules:
+    - changes:
+        paths:
+          - open5gs/infrastructure/eks/*.tf
 
 build:
   extends: .terraform:build
