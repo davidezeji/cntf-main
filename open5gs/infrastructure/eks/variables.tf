@@ -10,21 +10,13 @@ variable "cluster_name" {
 
 variable "vpc_id" {
   type    = string
-  default = "vpc-05a8ec54222fa40e2"
+  default = "vpc-0b10b1beef44a6387"
 }
-# variable "vpc_id" {
-#   type    = string
-#   default = "vpc-079d1a939306e311f"
-# }
 
 variable "private_subnets" {
   type    = list(any)
-  default = ["subnet-009976b4a3c08ec9f", "subnet-0da7894199f5c3731"]
+  default = ["subnet-0280c17474273a54b", "subnet-06d954da2f1d17f67"]
 }
-# variable "private_subnets" {
-#   type    = list(any)
-#   default = ["subnet-0ebdfa23a1ac3f9a6", "subnet-09d5db76f3f1e66d5"]
-# }
 
 variable "desired_size" {
   type    = string

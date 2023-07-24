@@ -4,24 +4,24 @@ module "eks" {
 
   aws_auth_users = [
     {
-      userarn  = "arn:aws:iam::935370813358:user/david.ezeji@dish.com"
-      username = "david.ezeji@dish.com"
-      groups   = ["system:masters"]
+      userarn  = "arn:aws:iam::018300759195:user/terraform"
+      username = "terraform"
+      # groups   = ["system:masters"]
     },
 
-    {
-      userarn  = "arn:aws:iam::935370813358:user/pierce.alworth@dish.com"
-      username = "pierce.alworth@dish.com"
-      groups   = ["system:masters"]
-    }
-  ]
+  #   {
+  #     userarn  = "arn:aws:iam::935370813358:user/pierce.alworth@dish.com"
+  #     username = "pierce.alworth@dish.com"
+  #     groups   = ["system:masters"]
+  #   }
+  # ]
 
-  aws_auth_roles = [
-    {
-      rolearn  = "arn:aws:iam::935370813358:role/AWSReservedSSO_AWSAdministratorAccess_05443a7616bdce19"
-      username = "verica"
-      groups   = ["system:masters"]
-    }
+  # aws_auth_roles = [
+  #   {
+  #     rolearn  = "arn:aws:iam::935370813358:role/AWSReservedSSO_AWSAdministratorAccess_05443a7616bdce19"
+  #     username = "verica"
+  #     groups   = ["system:masters"]
+  #   }
   ]
 
   source  = "terraform-aws-modules/eks/aws"
@@ -273,20 +273,20 @@ resource "aws_s3_bucket" "cntf_open5gs_bucket_metrics" {
   bucket = var.bucket_name_two
 }
 
-# resource "aws_s3_bucket" "cntf-open5gs-coralogix-test-results" {
-#   bucket = var.bucket_name_three
-# }
+resource "aws_s3_bucket" "cntf-open5gs-coralogix-test-results" {
+  bucket = var.bucket_name_three
+}
 
-# resource "aws_s3_bucket" "cntf_open5gs_bucket_tfstate" {
-#   bucket = var.bucket_name_four
-# }
+resource "aws_s3_bucket" "cntf_open5gs_bucket_tfstate" {
+  bucket = var.bucket_name_four
+}
 
-# ECR repository for custom ueransim image
-# resource "aws_ecr_repository" "cntf-ueransim-puppeteer-ecr-repository" {
-#   name                 = "var.aws_ecr_repository_name"
-#   image_tag_mutability = "MUTABLE"
+ECR repository for custom ueransim image
+resource "aws_ecr_repository" "cntf-ueransim-puppeteer-ecr-repository" {
+  name                 = "var.aws_ecr_repository_name"
+  image_tag_mutability = "MUTABLE"
 
-#   image_scanning_configuration {
-#     scan_on_push = true
-#   }
-# }
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
