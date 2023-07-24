@@ -277,9 +277,9 @@ resource "aws_s3_bucket" "cntf-open5gs-coralogix-test-results" {
   bucket = var.bucket_name_three
 }
 
-resource "aws_s3_bucket" "cntf_open5gs_bucket_tfstate" {
-  bucket = var.bucket_name_four
-}
+# resource "aws_s3_bucket" "cntf_open5gs_bucket_tfstate" {
+#   bucket = var.bucket_name_four
+# }
 
 # ECR repository for custom ueransim image
 resource "aws_ecr_repository" "cntf-ueransim-puppeteer-ecr-repository" {
