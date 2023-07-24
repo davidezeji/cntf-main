@@ -32,7 +32,7 @@ fmt:
   rules:
     - changes:
         paths:
-          # - open5gs/infrastructure/eks/*.tf
+          - open5gs/infrastructure/eks/*.tf
 
 validate:
   extends: .terraform:validate
