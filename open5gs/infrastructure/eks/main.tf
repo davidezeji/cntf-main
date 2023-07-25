@@ -9,19 +9,19 @@ module "eks" {
       # groups   = ["system:masters"]
     },
 
-  #   {
-  #     userarn  = "arn:aws:iam::935370813358:user/pierce.alworth@dish.com"
-  #     username = "pierce.alworth@dish.com"
-  #     groups   = ["system:masters"]
-  #   }
-  # ]
+    #   {
+    #     userarn  = "arn:aws:iam::935370813358:user/pierce.alworth@dish.com"
+    #     username = "pierce.alworth@dish.com"
+    #     groups   = ["system:masters"]
+    #   }
+    # ]
 
-  # aws_auth_roles = [
-  #   {
-  #     rolearn  = "arn:aws:iam::935370813358:role/AWSReservedSSO_AWSAdministratorAccess_05443a7616bdce19"
-  #     username = "verica"
-  #     groups   = ["system:masters"]
-  #   }
+    # aws_auth_roles = [
+    #   {
+    #     rolearn  = "arn:aws:iam::935370813358:role/AWSReservedSSO_AWSAdministratorAccess_05443a7616bdce19"
+    #     username = "verica"
+    #     groups   = ["system:masters"]
+    #   }
   ]
 
   source  = "terraform-aws-modules/eks/aws"
@@ -44,7 +44,7 @@ module "eks" {
 
   enable_irsa = var.enable_irsa
 
-  subnet_ids = var.private_subnets
+  subnet_ids = var.subnets
   vpc_id     = var.vpc_id
 
   # eks_managed_node_group_defaults = {
@@ -100,7 +100,7 @@ module "eks" {
       desired_size = 5
 
       instance_types = [var.node_instance_type]
-      subnet_ids     = var.private_subnets
+      subnet_ids     = var.subnets
       vpc_id         = var.vpc_id
     }
   }
@@ -232,12 +232,12 @@ resource "kubernetes_namespace" "monitoring" {
 resource "helm_release" "otel_coralogix" {
   repository = "https://cgx.jfrog.io/artifactory/coralogix-charts-virtual"
   chart      = "opentelemetry-coralogix"
-  
-  
-  name       = "otel-coralogix"
-  namespace = "monitoring"
+
+
+  name            = "otel-coralogix"
+  namespace       = "monitoring"
   cleanup_on_fail = true
- 
+
   values = [
     file("${path.module}/otel-override.yaml")
   ]
@@ -247,7 +247,7 @@ resource "helm_release" "otel_coralogix" {
   ]
 
   set {
-    name = "config.exporters.coralogix.private_key"
+    name  = "config.exporters.coralogix.private_key"
     value = var.coralogix_write_key
   }
 
