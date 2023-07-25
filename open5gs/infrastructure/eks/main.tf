@@ -282,11 +282,11 @@ resource "kubernetes_namespace" "ueransim" {
 # }
 
 # ECR repository for custom ueransim image
-# resource "aws_ecr_repository" "cntf-ueransim-puppeteer-ecr-repository" {
-#   name                 = "var.aws_ecr_repository_name"
-#   image_tag_mutability = "MUTABLE"
+resource "aws_ecr_repository" "cntf-ueransim-puppeteer-ecr-repository" {
+  name                 = var.aws_ecr_repository_name
+  image_tag_mutability = "MUTABLE"
 
-#   image_scanning_configuration {
-#     scan_on_push = true
-#   }
-# }
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
