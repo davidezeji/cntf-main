@@ -125,7 +125,7 @@ variable "bucket_name_three" {
 }
 
 variable "bucket_name_four" {
-  default = "cntf-tfstate-dish"
+  default = "cntf-tfstate"
 }
 
 variable "bucket_name_five" {

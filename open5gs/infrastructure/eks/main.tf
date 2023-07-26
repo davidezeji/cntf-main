@@ -281,9 +281,9 @@ resource "kubernetes_namespace" "ueransim" {
 # }
 
 # S3 bucket to store terraform state file
-# resource "aws_s3_bucket" "cntf_open5gs_bucket_tfstate" {
-#   bucket = var.bucket_name_four
-# }
+resource "aws_s3_bucket" "cntf_open5gs_bucket_tfstate" {
+  bucket = var.bucket_name_four
+}
 
 # S3 bucket for gitlab CI Caches
 resource "aws_s3_bucket" "s3_gitlab_ci_cache" {
