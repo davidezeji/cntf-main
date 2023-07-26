@@ -7,6 +7,16 @@ variables:
   TF_ROOT: open5gs/infrastructure/eks
   TF_STATE_NAME: open5gs
 
+# AWS S3 cache for gitlab runner(s) 
+cache:
+  key: cntf-s3-cache
+  paths:
+    - cntf/  
+  untracked: true
+  s3:
+    bucket_name: cntf-gitlab-ci-cache
+    bucket_key: cache/cntf
+
 include:
   - template: Terraform/Base.gitlab-ci.yml  
   - template: Jobs/SAST-IaC.gitlab-ci.yml   
