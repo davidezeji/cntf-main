@@ -128,6 +128,10 @@ variable "bucket_name_four" {
   default = "cntf-tfstate-dish"
 }
 
+variable "bucket_name_five" {
+  default = "gitlab-ci-cache"
+}
+
 variable "aws_ecr_repository_name" {
   default = "cntf-ueransim-puppeteer"
 }
