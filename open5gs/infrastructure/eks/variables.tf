@@ -129,7 +129,7 @@ variable "bucket_name_four" {
 }
 
 variable "bucket_name_five" {
-  default = "gitlab-ci-cache"
+  default = "cntf-gitlab-ci-cache"
 }
 
 variable "aws_ecr_repository_name" {
