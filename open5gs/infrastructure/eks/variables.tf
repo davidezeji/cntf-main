@@ -113,15 +113,15 @@ variable "coralogix_write_key" {
 }
 
 variable "bucket_name_one" {
-  default = "cntf-open5gs-coralogix-logs"
+  default = "cntf-open5gs-logs"
 }
 
 variable "bucket_name_two" {
-  default = "cntf-open5gs-coralogix-metrics"
+  default = "cntf-open5gs-metrics"
 }
 
 variable "bucket_name_three" {
-  default = "cntf-open5gs-coralogix-test-results"
+  default = "cntf-open5gs-test-results"
 }
 
 variable "bucket_name_four" {
