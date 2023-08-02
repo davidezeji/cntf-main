@@ -280,16 +280,6 @@ resource "aws_s3_bucket" "cntf-open5gs-coralogix-test-results" {
   bucket = var.bucket_name_three
 }
 
-# S3 bucket to store terraform state file
-resource "aws_s3_bucket" "cntf_open5gs_bucket_tfstate" {
-  bucket = var.bucket_name_four
-}
-
-# S3 bucket for gitlab CI Caches
-resource "aws_s3_bucket" "s3_gitlab_ci_cache" {
-  bucket = var.bucket_name_five
-}
-
 # ECR repository for custom ueransim image
 resource "aws_ecr_repository" "cntf-ueransim-puppeteer-ecr-repository" {
   name                 = var.aws_ecr_repository_name

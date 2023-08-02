@@ -36,12 +36,12 @@ terraform {
     }
   }
 
-  # backend "s3" {
-  #   encrypt = true
-  #   bucket  = "cntf-tfstate"
-  #   key     = "infrastructure"
-  #   region  = "us-east-1"
-  # }
+  backend "s3" {
+    encrypt = true
+    bucket  = "cntf-tfstate"
+    key     = "infrastructure"
+    region  = "us-east-1"
+  }
 
   required_version = ">= 0.14"
 }

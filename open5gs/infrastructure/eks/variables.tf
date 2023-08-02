@@ -124,14 +124,6 @@ variable "bucket_name_three" {
   default = "cntf-open5gs-test-results"
 }
 
-variable "bucket_name_four" {
-  default = "cntf-tfstate"
-}
-
-variable "bucket_name_five" {
-  default = "cntf-gitlab-ci-cache"
-}
-
 variable "aws_ecr_repository_name" {
   default = "cntf-ueransim-puppeteer"
 }
