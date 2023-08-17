@@ -194,7 +194,7 @@ locals {
   }
 }
 
-S3 configuration for Coralogix metrics/logs
+# S3 configuration for coralogix to use s3 buckets to store logs & metrics
 module "s3-archive" {
   source = "coralogix/aws/coralogix//modules/provisioning/s3-archive"
 
@@ -275,16 +275,20 @@ resource "kubernetes_namespace" "ueransim" {
   }
 }
 
-# S3 bucket to store logs for open5gs
-resource "aws_s3_bucket" "cntf_open5gs_bucket_logs" {
-  bucket = var.bucket_name_one
+# S3 bucket to store logs for open5gs (goes in us-east-2 so coralogix can access it)
+provider "aws" {
+  alias  = "us-east-2"
   region = "us-east-2"
 }
+resource "aws_s3_bucket" "cntf_open5gs_bucket_logs" {
+  provider = aws.us-east-2
+  bucket = var.bucket_name_one
+}
 
-# S3 bucket to store metrics for open5gs
+# S3 bucket to store metrics for open5gs (goes in us-east-2 so coralogix can access it)
 resource "aws_s3_bucket" "cntf_open5gs_bucket_metrics" {
+  provider = aws.us-east-2
   bucket = var.bucket_name_two
-  region = "us-east-2"
 }
 
 # S3 bucket to store logs from tests run on open5gs
