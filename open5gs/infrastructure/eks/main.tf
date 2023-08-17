@@ -194,14 +194,14 @@ locals {
   }
 }
 
-# S3 configuration for Coralogix metrics/logs
-# module "s3-archive" {
-#   source = "coralogix/aws/coralogix//modules/provisioning/s3-archive"
+S3 configuration for Coralogix metrics/logs
+module "s3-archive" {
+  source = "coralogix/aws/coralogix//modules/provisioning/s3-archive"
 
-#   coralogix_region    = "US1"
-#   logs_bucket_name    = var.bucket_name_one
-#   metrics_bucket_name = var.bucket_name_two
-# }
+  coralogix_region    = "US1"
+  logs_bucket_name    = var.bucket_name_one
+  metrics_bucket_name = var.bucket_name_two
+}
 
 resource "kubernetes_secret" "coralogix-keys" {
   metadata {
