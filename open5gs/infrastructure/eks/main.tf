@@ -194,7 +194,7 @@ locals {
   }
 }
 
-# # S3 configuration for coralogix to use s3 buckets to store logs & metrics
+# S3 configuration for coralogix to use s3 buckets to store logs & metrics
 # module "s3-archive" {
 #   source = "coralogix/aws/coralogix//modules/provisioning/s3-archive"
 
