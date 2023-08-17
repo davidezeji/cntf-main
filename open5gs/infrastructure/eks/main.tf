@@ -275,7 +275,7 @@ resource "kubernetes_namespace" "ueransim" {
   }
 }
 
-# S3 bucket to store logs for open5gs (goes in us-east-2 so coralogix can access it)
+# S3 bucket to store logs for open5gs logs & metrics
 provider "aws" {
   alias  = "us-east-2"
   region = "us-east-2"
