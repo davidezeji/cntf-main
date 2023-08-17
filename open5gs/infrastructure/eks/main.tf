@@ -194,6 +194,15 @@ locals {
   }
 }
 
+# S3 configuration for Coralogix metrics/logs
+# module "s3-archive" {
+#   source = "coralogix/aws/coralogix//modules/provisioning/s3-archive"
+
+#   coralogix_region    = "US1"
+#   logs_bucket_name    = var.bucket_name_one
+#   metrics_bucket_name = var.bucket_name_two
+# }
+
 resource "kubernetes_secret" "coralogix-keys" {
   metadata {
     name      = "coralogix-keys"
@@ -228,6 +237,7 @@ resource "kubernetes_namespace" "monitoring" {
     name = "monitoring"
   }
 }
+
 # Install the OpenTelemetry for Coralogix
 resource "helm_release" "otel_coralogix" {
   repository = "https://cgx.jfrog.io/artifactory/coralogix-charts-virtual"
@@ -268,11 +278,13 @@ resource "kubernetes_namespace" "ueransim" {
 # S3 bucket to store logs for open5gs
 resource "aws_s3_bucket" "cntf_open5gs_bucket_logs" {
   bucket = var.bucket_name_one
+  region = "us-east-2"
 }
 
 # S3 bucket to store metrics for open5gs
 resource "aws_s3_bucket" "cntf_open5gs_bucket_metrics" {
   bucket = var.bucket_name_two
+  region = "us-east-2"
 }
 
 # S3 bucket to store logs from tests run on open5gs
