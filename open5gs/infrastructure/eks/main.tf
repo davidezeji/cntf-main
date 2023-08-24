@@ -197,8 +197,9 @@ locals {
 # S3 configuration for coralogix to use s3 buckets to store logs & metrics
 module "s3-archive" {
   source = "coralogix/aws/coralogix//modules/provisioning/s3-archive"
+  version = "1.0.44"
 
-  aws_region    = "us-east-2"
+  coralogix_region    = "US1"
   logs_bucket_name    = var.bucket_name_one
   metrics_bucket_name = var.bucket_name_two
 }
