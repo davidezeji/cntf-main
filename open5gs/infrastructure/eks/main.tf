@@ -195,13 +195,13 @@ locals {
 }
 
 # S3 configuration for coralogix to use s3 buckets to store logs & metrics
-# module "s3-archive" {
-#   source = "coralogix/aws/coralogix//modules/provisioning/s3-archive"
+module "s3-archive" {
+  source = "coralogix/aws/coralogix//modules/provisioning/s3-archive"
 
-#   coralogix_region    = "US1"
-#   logs_bucket_name    = var.bucket_name_one
-#   metrics_bucket_name = var.bucket_name_two
-# }
+  coralogix_region    = "US2"
+  logs_bucket_name    = var.bucket_name_one
+  metrics_bucket_name = var.bucket_name_two
+}
 
 resource "kubernetes_secret" "coralogix-keys" {
   metadata {
