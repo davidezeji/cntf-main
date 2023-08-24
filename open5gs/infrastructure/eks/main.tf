@@ -198,7 +198,7 @@ locals {
 module "s3-archive" {
   source = "coralogix/aws/coralogix//modules/provisioning/s3-archive"
 
-  coralogix_region    = "US2"
+  aws_region    = "us-east-2"
   logs_bucket_name    = var.bucket_name_one
   metrics_bucket_name = var.bucket_name_two
 }
