@@ -103,6 +103,10 @@ config:
 
   service:
     pipelines:
+      logs:
+        receivers: [filelog]
+        processors: [batch, memory_limiter]
+        exporters: [coralogix]
       metrics:
         receivers: [prometheus]
         processors: [batch, memory_limiter]
