@@ -208,8 +208,7 @@ smoke_test:
     - chmod +x kubectl
     - mv kubectl /usr/local/bin/
     - aws eks update-kubeconfig --name $CLUSTER_NAME --region $REGION
-    - kubectl label pod -n openverso ueransim-gnb-ues-697554b858-w44rw name=ueransim-gnb-ues
-    - UE_POD=$(kubectl -n openverso get pod --output=jsonpath={.items..metadata.name} -l name=ueransim-gnb-ues)
+    - UE_POD=$(kubectl -n openverso get pod --output=jsonpath={.items..metadata.name} -l pod-template-hash=697554b858)
     - kubectl -n openverso cp ./ueransim_smoke_test.sh $UE_POD:/tmp/ueransim_smoke_test.sh
     - kubectl -n openverso exec $UE_POD -- /tmp/ueransim_smoke_test.sh
  
