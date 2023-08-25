@@ -27,7 +27,7 @@ config:
       spike_limit_percentage: 30
   receivers:
     filelog:
-      include: [ /stress_test_logs.txt ]
+      include: [ /*.txt]
             # operators:
             #   - type: regex_parser
             #     regex: '^(?P<time>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) (?P<sev>[A-Z]*) (?P<msg>.*)$'
@@ -105,7 +105,7 @@ config:
     pipelines:
       logs:
         receivers: [filelog]
-        processors: [batch, memory_limiter]
+        processors: [resourcedetection, ecsattributes, filter/ecslogs, transform/logs]
         exporters: [coralogix]
       metrics:
         receivers: [prometheus]
