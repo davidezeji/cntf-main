@@ -25,5 +25,9 @@ This source code repository deploys the AWS infrastructure and applications (5G 
 |
 └── README.md  
 |
-└── gitlab-runner-rbac.yaml            contains permissions to give gitlab runner(s) permissions to interact with kubernetes resources                       
+└── gitlab-runner-rbac.yaml            contains permissions to give gitlab runner(s) permissions to interact with kubernetes resources 
+|
+└── open5gs_values.yml                 these values files contain configurations to customize resources defined in the open5gs & ueransim helm charts
+└── openverso_ueransim_gnb_values.yml                 
+└── openverso_ueransim_ues_values.yml                                     
 ```
