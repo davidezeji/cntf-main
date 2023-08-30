@@ -12,14 +12,5 @@ Project Structure:
 |           └── variables.tf
 |           └── outputs.tf 
 |           └── versions.tf
-|	     
-├── free5gc  
-│   └── README.md                        contains infrastructure-as-code and helm configurations for free5gc
-|   ├── infrastructure
-|       ├── eks
-|           └── provider.tf
-|           └── main.tf
-|           └── variables.tf
-|           └── outputs.tf 
 
 ```
