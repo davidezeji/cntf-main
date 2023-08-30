@@ -3,7 +3,7 @@
 ## Purpose
 This source code repository deploys the AWS infrastructure and applications (5G core & test suite) for CNTF
 
-## Project Structure
+## Project structure
 ```
 ├── coralogix_s3_setup                 contains configurations to setup s3 buckets for use by Coralogix 
 |   └── README.md
