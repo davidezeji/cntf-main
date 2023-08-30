@@ -13,6 +13,8 @@ This source code repository deploys the AWS infrastructure and applications (5G 
 ├── open5gs
 |   ├── infrastructure                 contains infrastructure-as-code and helm configurations for open5gs & ueransim
 |      	├── eks
+            └── fluentd-override.yaml  configures fluentd daemonset within the cluster
+            └── otel-override.yaml     configures opentelemtry daemonset within the cluster
 |           └── provider.tf
 |           └── main.tf                    
 |           └── variables.tf                
@@ -21,5 +23,7 @@ This source code repository deploys the AWS infrastructure and applications (5G 
 |
 └── .gitlab-ci.yml                     contains configurations to run CI/CD pipeline
 |
-└── README.md                          
+└── README.md  
+|
+└── gitlab-runner-rbac.yaml            contains permissions to give gitlab runner(s) permissions to interact with kubernetes resources                       
 ```
