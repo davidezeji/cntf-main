@@ -1,7 +1,7 @@
 # CNTF - Main
 
 ## Purpose
-This source code repository deploys the AWS infrastructure and applications (5G core & test suite) for CNTF
+This source code repository stores the configurations to create the necessary AWS infrastructure and applications (5G core & test suite) for CNTF.
 
 ## Deployment
 Prerequisites:
@@ -19,6 +19,9 @@ Steps:
     * Once again, click the drop-down arrow next to "Build" and select "Pipelines", you should now see the pipeline being executed
 
 ## Coralogix Dashboards
+* To view the parsed & visualized data resulting from tests run by various CNTF repositories, please visit CNTF's dedicated Coralogix tenant: https://dish-wireless-network.atlassian.net/wiki/spaces/MSS/pages/543326302/Coralogix+BOAT+Change+Request 
+    * *To view raw data resulting from test runs, please look at the data stored in AWS S3 buckets dedicated to CNTF.*
+
 
 ## Project structure
 ```
