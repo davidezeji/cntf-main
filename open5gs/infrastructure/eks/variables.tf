@@ -20,17 +20,17 @@ variable "subnets" {
 
 variable "desired_size" {
   type    = string
-  default = "5"
+  default = "7"
 }
 
 variable "min_size" {
   type    = string
-  default = "4"
+  default = "5"
 }
 
 variable "max_size" {
   type    = string
-  default = "6"
+  default = "9"
 }
 
 variable "image_id" {
