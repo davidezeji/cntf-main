@@ -24,7 +24,7 @@ Steps:
 * To view raw data resulting from test runs, please look at the data stored in AWS S3 buckets dedicated to CNTF.
 
 
-## Project structure
+## Project Structure
 ```
 ├── coralogix_s3_setup                 contains configurations to setup s3 buckets for use by Coralogix 
 |   └── README.md
