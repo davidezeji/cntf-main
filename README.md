@@ -29,8 +29,8 @@ Steps:
 ├── open5gs
 |   ├── infrastructure                 contains infrastructure-as-code and helm configurations for open5gs & ueransim
 |      	├── eks
-            └── fluentd-override.yaml  configures fluentd daemonset within the cluster
-            └── otel-override.yaml     configures opentelemtry daemonset within the cluster
+|           └── fluentd-override.yaml  configures fluentd daemonset within the cluster
+|           └── otel-override.yaml     configures opentelemtry daemonset within the cluster
 |           └── provider.tf
 |           └── main.tf                    
 |           └── variables.tf                
