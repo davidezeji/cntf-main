@@ -17,6 +17,7 @@ Steps:
 5. In the drop-down under "Run for branch name or tag" select the appropriate name for this branch and click "Run Pipeline"
 6. Once again, click the drop-down arrow next to "Build" and select "Pipelines", you should now see the pipeline being executed
 
+## Coralogix Dashboards
 
 ## Project structure
 ```
