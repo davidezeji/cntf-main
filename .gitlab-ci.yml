@@ -210,6 +210,6 @@ smoke_test:
     - aws eks update-kubeconfig --name $CLUSTER_NAME --region $REGION
     - UE_POD=$(kubectl -n openverso get pod --output=jsonpath={.items..metadata.name} -l pod-template-hash=697554b858)
     - kubectl -n openverso cp ./ueransim_smoke_test.sh $UE_POD:/tmp/ueransim_smoke_test.sh
-    - kubectl -n openverso exec $UE_POD -- /tmp/ueransim_smoke_test.sh
+    - kubectl -n openverso exec $UE_POD -- /tmp/ueransim_smoke_test.sh # if a new installment of open5gs and ueranism have been made, this step of the pipeline will initially fail, as it takes some time for the pods to be fully created. Re-run this stage of the pipeline once all pods are created/ready.
  
     
