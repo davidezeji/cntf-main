@@ -8,7 +8,9 @@ Prerequisites:
 
 * *Please ensure that you have configured the AWS CLI to authenticate to an AWS environment where you have adequate permissions to create an EKS cluster, security groups and IAM roles*: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html
 * *Please ensure that you have installed Terraform (https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli), Kubernetes (https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html), and Helm (https://helm.sh/docs/intro/install/) on your local machine.*
-* *Please ensure you have Gitlab runners set up (or are using shared runners): https://docs.gitlab.com/runner/register/*
+* *Please ensure you have Gitlab runners set up (or are using shared runners):*
+    * set up private runners (recommended): https://docs.gitlab.com/runner/register/
+    * use shared runners: https://docs.gitlab.com/ee/ci/runners/runners_scope.html
 * *Please ensure that the pipeline in this repository has been successfully deployed before executing those in other CNTF repositories, as this ensures that the AWS infrastructure, 5g core, and UERANSIM test suite are available to support the execution of scripts in other CNTF repositories.*  
 
 Steps:
