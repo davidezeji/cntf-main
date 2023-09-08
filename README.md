@@ -7,6 +7,7 @@ This source code repository stores the configurations to create the necessary AW
 Prerequisites:
 
 * *Please ensure that you have configured the AWS CLI to authenticate to an AWS environment where you have adequate permissions to create an EKS cluster, security groups and IAM roles*: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html
+* *Please ensure you have Gitlab runners set up (or are using shared runners): https://docs.gitlab.com/runner/register/*
 * *Please ensure that the pipeline in this repository has been successfully deployed before executing those in other CNTF repositories, as this ensures that the AWS infrastructure, 5g core, and UERANSIM test suite are available to support the execution of scripts in other CNTF repositories.*  
 
 Steps:
