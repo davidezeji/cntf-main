@@ -50,11 +50,16 @@ Raw data: To view raw data resulting from test runs, please look at the data sto
 |
 └── .gitlab-ci.yml                     contains configurations to run CI/CD pipeline
 |
+|
 └── README.md  
 |
-└── gitlab-runner-rbac.yaml            contains permissions to give gitlab runner(s) permissions to interact with kubernetes resources 
 |
-└── open5gs_values.yml                 these values files contain configurations to customize resources defined in the open5gs & ueransim helm charts
-└── openverso_ueransim_gnb_values.yml                 
-└── openverso_ueransim_ues_values.yml                                     
+└── gitlab-runner-rbac.yaml            contains configurations to give gitlab runner(s) permissions to interact with kubernetes resources (manually run "kubectl apply -f gitlab-runner-rbac.yaml" on your local terminal to execute this file) 
+|
+|
+└── ue_populate.sh                     creates one ue and subscribes it to the network, main purpose is to see if this baseline functionality works
+|
+|
+└── ueransim_smoke_test.sh             performs a curl over both the network and internet, main purpose of this is to see if there are any network interfaces present            
+                                  
 ```
