@@ -11,7 +11,7 @@ Prerequisites:
 * *Please ensure that you have Gitlab runners set up:*
     * set up private runners (recommended): https://docs.gitlab.com/runner/register/
     * use shared runners: https://docs.gitlab.com/ee/ci/runners/runners_scope.html
-* *Please ensure that the pipeline in this repository has been successfully deployed FIRST before executing those in other CNTF repositories, as this ensures that the AWS infrastructure, 5g core, and UERANSIM test suite are available to support the execution of scripts in other repositories.*  
+* *Please ensure that the pipeline in this repository has been successfully deployed FIRST before executing those in other CNTF repositories. This ensures that the AWS infrastructure, 5g core, and UERANSIM test suite are available to support the execution of scripts in other repositories.*  
 
 Steps:
 1. Mirror this repository in Gitlab or connect this repository externally to Gitlab 
