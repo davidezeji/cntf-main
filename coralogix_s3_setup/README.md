@@ -9,7 +9,7 @@ Coralogix retrieves raw data from infrastructure and applications running in Kub
 To continuously send test data to Coralogix for parsing and visualization, set up an AWS Lambda function triggered whenever new logs are added to the dedicated S3 bucket ("cntf-open5gs-test-results").
 
 **Options:**
-* [manual setup](https://coralogix.com/docs/data-collection-s3/)
+* [Manual setup](https://coralogix.com/docs/data-collection-s3/)
 * [Terraform](https://registry.terraform.io/modules/coralogix/aws/coralogix/latest/submodules/s3)
 
 
