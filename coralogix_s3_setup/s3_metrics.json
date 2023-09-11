@@ -6,7 +6,7 @@
             "Sid": "MyStatementSid",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::625240141681:root"
+                "AWS": "arn:aws:iam::<Account_ID>:root"
             },
             "Action": [
                 "s3:GetObject",
