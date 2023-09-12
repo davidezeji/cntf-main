@@ -11,7 +11,6 @@
 * [FluentD](https://www.fluentd.org/)
 
 ## Automation
-### Terraform
 **Resources defined in Terraform:** 
 
 * EKS cluster - Used to host Open5GS, UERANSIM and other applications
@@ -20,8 +19,6 @@
 * ECR repository - Used to store the custom UERASIM docker image that runs puppeteer tests
 * FluentD daemonset - Used to collect logs from resources running in the cluster and structure them in JSON format
 Coralogix OpenTelemtry collector daemonset: Used to receive, process and export telemetry data to Coralogix
-
-### Gitlab CI
 
 **Resources deployed by Gitlab CI pipeline:**
 
