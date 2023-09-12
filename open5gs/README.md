@@ -1,30 +1,12 @@
 # Architecture
 
-<img width="1458" alt="Screenshot 2023-07-06 at 9 54 59 AM" src="https://github.com/DISHDevEx/cntf/assets/82470009/8dc32707-7bac-4ee3-81c6-75f58c06bc17">
+<img width="1274" alt="Screenshot 2023-09-12 at 2 09 24 PM" src="https://github.com/DISHDevEx/cntf/assets/82470009/6bfe7d27-2855-45e5-a80a-ffd7ca49d059">
 
-## Open5GS
+## Documentation
 
-Please refer to this documentation to learn more about Open5GS: https://github.com/DISHDevEx/open5gs
-
-## UERANSIM
-
-Please refer to this documentation to learn more about UERANSIM: https://github.com/DISHDevEx/UERANSIM
-
-**UERANSIM is currently the test tool of choice for CNTF, this is subject to change in the future.*
-
-## Coralogix
-
-Please refer to this documentation to learn more about Coralogix: https://coralogix.com/
-
-## Palantir
-
-Please refer to this documentation to learn more about Palantir: https://www.palantir.com/
-
-## OpenTelemtry
-
-Please refer to this documentation to learn more about OpenTelemetry: https://opentelemetry.io/
-
-## FluentD
-
-Please refer to this documentation to learn more about FluentD: https://www.fluentd.org/
+* [Open5GS](https://github.com/DISHDevEx/open5gs)
+* [UERANSIM](https://github.com/DISHDevEx/UERANSIM)
+* [Coralogix](https://coralogix.com/)
+* [OpenTelemetry](https://opentelemetry.io/)
+* [FluentD](https://www.fluentd.org/)
 
