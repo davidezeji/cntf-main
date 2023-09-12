@@ -28,7 +28,7 @@ Coralogix OpenTelemtry collector daemonset: Used to receive, process and export 
 * **Test-suite:** UERANSIM, Open source 5G UE and RAN (gNodeB) simulator 
 
 
-## Pipeline stages
+## Pipeline Stages
 
 **Stages:**
 * **Validate:** Formats and validates the written terraform code for syntax accuracy (“terraform fmt” and “terraform validate” commands happen here)
