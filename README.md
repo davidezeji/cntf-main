@@ -23,7 +23,7 @@ Steps:
     * Once again, click the drop-down arrow next to "Build" and select "Pipelines", you should now see the pipeline being executed
     
 ## Coralogix Dashboards
-To view parsed & visualized data resulting from tests run by various CNTF repositories, please visit CNTF's dedicated Coralogix tenant: https://dish-wireless-network.atlassian.net/wiki/spaces/MSS/pages/543326302/Coralogix+BOAT+Change+Request 
+To view parsed & visualized data resulting from tests run by various CNTF repositories, please visit CNTF's dedicated Coralogix tenant: https://dish-wireless-network.atlassian.net/wiki/spaces/MSS/pages/509509825/Coralogix+CNTF+Dashboards
     * Note: *You must have an individual account created by Coralogix to gain access to this tenant.*
     
 Steps to view dashboards:
