@@ -25,7 +25,7 @@ Coralogix OpenTelemtry collector daemonset: Used to receive, process and export 
 * Terraform - AWS infrastructure, applications and daemonsets
 * 5g Core - Open5GS, Open source 5G core with a range of software components and network functionalities that realize the core functions of 4G/5G NSA (Non-Standalone) and 5G SA (Standalone).
 * Test-suite - UERANSIM, Open source 5G UE and RAN (gNodeB) simulator
-* Test cases - Smoke test 
+* Test case - Smoke test 
 
 **Pipeline Stages:**
 * Validate - Formats and validates the written terraform code for syntax accuracy (“terraform fmt” and “terraform validate” commands happen here)
