@@ -27,13 +27,14 @@ Coralogix OpenTelemtry collector daemonset: Used to receive, process and export 
 * Test-suite - UERANSIM, Open source 5G UE and RAN (gNodeB) simulator
 * Test case - Smoke test 
 
-**Pipeline Stages:**
-* Validate - Formats and validates the written terraform code for syntax accuracy (“terraform fmt” and “terraform validate” commands happen here)
-* Test - Tests both IaC and helm charts (Open5GS and UERANSIM) for errors/malware before install
-* Build - Prepares terraform code for deployment (“terraform plan” command executes here)
-* Deploy - Manual stage that deploys terraform code (“terraform apply” command executes here)
-* Cleanup - Manual stage that destroys all things deployed via terraform (“terraform destroy” command executes here)
-* Install_helm - Installs all necessary helm charts (Open5GS and UERANSIM) into the newly created EKS cluster
-* Smoke_test - Random UE is created via UERANSIM and connects to Open5GS. UE curls a website while using an Open5GS interface to ensure the core network is operational.
+## Pipeline Stages
+Goal of each stage in the pipeline (refer to ".gitlab-ci.yml" for more details):
+* "validate" - Formats and validates the written terraform code for syntax accuracy (“terraform fmt” and “terraform validate” commands happen here)
+* "test" - Tests both IaC and helm charts (Open5GS and UERANSIM) for errors/malware before install
+* "build" - Prepares terraform code for deployment (“terraform plan” command executes here)
+* "deploy" - Manual stage that deploys terraform code (“terraform apply” command executes here)
+* "cleanup" - Manual stage that destroys all things deployed via terraform (“terraform destroy” command executes here)
+* "install_helm" - Installs all necessary helm charts (e.g. 5g core and test-suite) into the EKS cluster
+* "smoke_test" - Random UE is created via UERANSIM and connects to Open5GS. UE curls a website while using an Open5GS interface to ensure the core network is operational.
 
 
