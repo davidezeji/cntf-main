@@ -1,7 +1,7 @@
 # CNTF - Main
 
 ## Purpose
-This source code repository stores the configurations to create the necessary AWS infrastructure and applications (5G core & test suite) for CNTF.
+This source code repository stores the configurations to create the necessary AWS infrastructure and applications (5G core, test suite and daemonsets) for CNTF.
 
 ## Deployment
 Prerequisites:
