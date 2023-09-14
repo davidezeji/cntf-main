@@ -6,24 +6,25 @@ This source code repository stores the configurations to create the necessary AW
 ## Deployment
 Prerequisites:
 
-* *Please ensure that you have configured the AWS CLI to authenticate to an AWS environment where you have adequate permissions to create an EKS cluster, security groups and IAM roles*: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html
+* *Please ensure that you have configured the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html) to authenticate to an AWS environment where you have adequate permissions to create an EKS cluster, security groups and IAM roles* 
 * *Please ensure that you have installed [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli), [Kubernetes](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html), and [Helm](https://helm.sh/docs/intro/install/) on your local machine.*
 * *Please ensure that you have Gitlab runners set up:*
-    * [set up private runners](https://docs.gitlab.com/runner/register/) (recommended) 
-    * [use shared runners](https://docs.gitlab.com/ee/ci/runners/runners_scope.html)
+    * [Ensure shared runners are enabled](https://docs.gitlab.com/ee/ci/runners/runners_scope.html) 
+    * After using shared runners to run the pipeline for this repository, please use private runners for the rest of the CNTF repositories (details are included in the documentation of other repositories)
 * *Please ensure that the pipeline in this repository has been successfully deployed FIRST before executing those in other CNTF repositories. This ensures that the AWS infrastructure, 5g core, and UERANSIM test suite are available to support the execution of scripts in other repositories.*  
 
 Steps:
-1. Mirror this repository in Gitlab or connect this repository externally to Gitlab 
-2. Authenticate Gitlab with AWS: https://docs.gitlab.com/ee/ci/cloud_deployment/
-3. Perform these actions inside of the Gitlab repository:
+1. Create a [Gitlab account](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwivrc2D7qqBAxWIlYkEHf0iBigQFnoECBQQAQ&url=https%3A%2F%2Fgitlab.com%2Fusers%2Fsign_up&usg=AOvVaw3DBJ7z7gBPTaP7wwyiUxDg&opi=89978449)
+2. [Mirror](https://docs.gitlab.com/ee/user/project/repository/mirror/) this repository OR connect it [externally](https://docs.gitlab.com/ee/ci/ci_cd_for_external_repos/) to Gitlab 
+3. Authenticate [Gitlab with AWS](https://docs.gitlab.com/ee/ci/cloud_deployment/)
+4. Run the CI/CD pipeline:
     * On the left side of the screen click the drop-down arrow next to "Build" and select "Pipelines"
     * In the top right hand corner select "Run Pipeline"
     * In the drop-down under "Run for branch name or tag" select the appropriate branch name and click "Run Pipeline"
     * Once again, click the drop-down arrow next to "Build" and select "Pipelines", you should now see the pipeline being executed
     
 ## Coralogix Dashboards
-To view parsed & visualized data resulting from tests run by various CNTF repositories, please visit CNTF's dedicated Coralogix tenant: https://dish-wireless-network.atlassian.net/wiki/spaces/MSS/pages/509509825/Coralogix+CNTF+Dashboards
+To view parsed & visualized data resulting from tests run by various CNTF repositories, please visit CNTF's dedicated [Coralogix tenant](https://dish-wireless-network.atlassian.net/wiki/spaces/MSS/pages/509509825/Coralogix+CNTF+Dashboards)
 * Note: *You must have an individual account created by Coralogix to gain access to this tenant.*
     
 Steps to view dashboards:
@@ -31,7 +32,6 @@ Steps to view dashboards:
 2. Select "Custom Dashboards" (All dashboards should have the tag "CNTF")
 
 Raw data: To view raw data resulting from test runs, please look at the data stored in AWS S3 buckets dedicated to CNTF.
-
 
 ## Project Structure
 ```
