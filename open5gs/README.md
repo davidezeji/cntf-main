@@ -1,6 +1,6 @@
 # Architecture
 
-<img width="1274" alt="Screenshot 2023-09-12 at 2 09 24 PM" src="https://github.com/DISHDevEx/cntf/assets/82470009/6bfe7d27-2855-45e5-a80a-ffd7ca49d059">
+<img width="1274" alt="Screenshot 2023-09-12 at 2 09 24 PM" src="https://github.com/davidezeji/cntf-main/assets/82470009/91fda175-800a-46e5-a076-4b635058d536">
 
 ## Documentation
 
