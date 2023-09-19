@@ -11,8 +11,8 @@ Prerequisites:
 * *Please ensure that the pipeline in this repository has been successfully deployed FIRST before executing those in other CNTF repositories. This ensures that the AWS infrastructure, 5g core, and UERANSIM test suite are available to support the execution of scripts in other repositories.*  
 
 Steps:
-1. Create a [Gitlab account](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwivrc2D7qqBAxWIlYkEHf0iBigQFnoECBQQAQ&url=https%3A%2F%2Fgitlab.com%2Fusers%2Fsign_up&usg=AOvVaw3DBJ7z7gBPTaP7wwyiUxDg&opi=89978449)
-2. [Mirror](https://docs.gitlab.com/ee/user/project/repository/mirror/) this repository OR connect it [externally](https://docs.gitlab.com/ee/ci/ci_cd_for_external_repos/) to Gitlab 
+1. Create a [Gitlab](https://gitlab.com/users/sign_up) account
+1. [Import](https://docs.gitlab.com/ee/user/project/import/github.html) this repository into Gitlab 
 3. Perform a "Git clone" of this repository on your local machine
 4. Authenticate [Gitlab with AWS](https://docs.gitlab.com/ee/ci/cloud_deployment/)
 5. Run the CI/CD pipeline (**Note:** The first deployment of the CNTF-Main pipeline may be executed by using shared Gitlab runners, which are enabled by default. For all other CNTF test runs, please set up a private Gitlab runner (details will be given in the documentation of other CNTF repositories)):
