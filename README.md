@@ -11,17 +11,16 @@ Prerequisites:
 * *Please ensure that the pipeline in this repository has been successfully deployed FIRST before executing those in other CNTF repositories. This ensures that the AWS infrastructure, 5g core, and UERANSIM test suite are available to support the execution of scripts in other repositories.*  
 
 Steps:
-1.  Create a fork of this repository and [Import](https://docs.gitlab.com/ee/user/project/import/github.html) it into Gitlab 
-1. [Import](https://docs.gitlab.com/ee/user/project/import/github.html) this repository into Gitlab 
-3. Perform a "Git clone" of this repository on your local machine
-4. Authenticate [Gitlab with AWS](https://docs.gitlab.com/ee/ci/cloud_deployment/):
+1. Create a fork of this repository and [Import](https://docs.gitlab.com/ee/user/project/import/github.html) it into Gitlab 
+2. Perform a "Git clone" of this repository on your local machine
+3. Authenticate [Gitlab with AWS](https://docs.gitlab.com/ee/ci/cloud_deployment/):
    * Inside of the Gitlab repository, hover over "Settings" and select "CI/CD"
    * Next to "Variables" select "Expand"
    * Select "Add variable"
    * Under "Key" type: `AWS_ACCESS_KEY_ID`
    * Under "Value", enter the value of your AWS Access key
    * Repeat steps 3-5 for `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN (optional)` with the correct corresponding values
-5. Run the CI/CD pipeline (**Note:** The first deployment of the CNTF-Main pipeline may be executed by using shared Gitlab runners, which are enabled by default. For all other CNTF test runs, please set up a private Gitlab runner (details will be given in the documentation of other CNTF repositories)):
+4. Run the CI/CD pipeline (**Note:** The first deployment of the CNTF-Main pipeline may be executed by using shared Gitlab runners, which are enabled by default. For all other CNTF test runs, please set up a private Gitlab runner (details will be given in the documentation of other CNTF repositories)):
     * On the left side of the screen click the drop-down arrow next to "Build" and select "Pipelines"
     * In the top right hand corner select "Run Pipeline"
     * In the drop-down under "Run for branch name or tag" select the appropriate branch name and click "Run Pipeline"
