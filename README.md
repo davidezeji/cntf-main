@@ -11,7 +11,7 @@ Prerequisites:
 * *Please ensure that the pipeline in this repository has been successfully deployed FIRST before executing those in other CNTF repositories. This ensures that the AWS infrastructure, 5g core, and UERANSIM test suite are available to support the execution of scripts in other repositories.*  
 
 Steps:
-1. Create a [Gitlab account](https://www.google.com/url?
+1. Create a [Gitlab account](https://gitlab.com/users/sign_in)
 2. Create a fork of this repository and [Import](https://docs.gitlab.com/ee/user/project/import/github.html) it into Gitlab 
 3. Perform a "Git clone" of this repository on your local machine
 4. Authenticate [Gitlab with AWS](https://docs.gitlab.com/ee/ci/cloud_deployment/):
