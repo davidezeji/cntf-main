@@ -4,21 +4,21 @@ module "eks" {
 
   aws_auth_users = [
     {
-      userarn  = "arn:aws:iam::018300759195:user/terraform"
+      userarn  = ""
       username = "terraform"
       # groups   = ["system:masters"]
     },
 
     #   {
-    #     userarn  = "arn:aws:iam::935370813358:user/pierce.alworth@dish.com"
-    #     username = "pierce.alworth@dish.com"
+    #     userarn  = ""
+    #     username = ""
     #     groups   = ["system:masters"]
     #   }
     # ]
 
     # aws_auth_roles = [
     #   {
-    #     rolearn  = "arn:aws:iam::935370813358:role/AWSReservedSSO_AWSAdministratorAccess_05443a7616bdce19"
+    #     rolearn  = ""
     #     username = "verica"
     #     groups   = ["system:masters"]
     #   }
