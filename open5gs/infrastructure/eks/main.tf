@@ -276,7 +276,7 @@ resource "kubernetes_namespace" "ueransim" {
   }
 }
 
-# S3 bucket to store logs for open5gs logs & metrics
+# S3 bucket to store logs for open5gs 
 provider "aws" {
   alias  = "us-east-2"
   region = "us-east-2"
